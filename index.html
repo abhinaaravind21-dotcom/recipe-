@@ -9,12 +9,58 @@
 <body>
   <div class="container">
     <h1>🍽 Recipe Finder</h1>
+
+    <!-- Search Section -->
     <div class="search-box">
-      <input type="text" id="search-input" placeholder="Search for a recipe...">
+      <input type="text" id="search-input" placeholder="Search for a recipe..." />
       <button id="search-btn">Search</button>
     </div>
+
+    <!-- Add Recipe Button -->
+    <div class="controls">
+      <button id="open-add-btn">Add Recipe</button>
+    </div>
+
+    <!-- Result Section -->
     <div id="result"></div>
   </div>
-  <script src="script.js"></script>
+
+  <!-- Add Recipe Modal -->
+  <div id="add-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Add a Recipe</h2>
+      <label>Recipe Name
+        <input id="add-name" type="text" />
+      </label>
+
+      <label>Category
+        <input id="add-category" type="text" placeholder="Main Course / Side / Dessert" />
+      </label>
+
+      <label>Area/Cuisine
+        <input id="add-area" type="text" placeholder="Indian / Arabian / etc." />
+      </label>
+
+      <label>Image URL (optional)
+        <input id="add-image" type="text" placeholder="https://..." />
+      </label>
+
+      <label>Ingredients (one per line)
+        <textarea id="add-ingredients" rows="6"></textarea>
+      </label>
+
+      <label>Instructions
+        <textarea id="add-instructions" rows="6"></textarea>
+      </label>
+
+      <div class="modal-actions">
+        <button id="save-recipe-btn">Save Recipe</button>
+        <button id="close-add-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Correct Script Path -->
+  <script src="js/script.js"></script>
 </body>
 </html>

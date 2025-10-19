@@ -1,3 +1,4 @@
+/* ===== Base Styles ===== */
 body {
   font-family: 'Poppins', sans-serif;
   background: #fff8f0;
@@ -13,6 +14,7 @@ body {
   padding: 20px;
 }
 
+/* ===== Search Section ===== */
 .search-box {
   display: flex;
   justify-content: center;
@@ -34,12 +36,14 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
   background-color: #ff7b00;
 }
 
+/* ===== Recipe Cards ===== */
 #result {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -51,7 +55,7 @@ button:hover {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .recipe:hover {
@@ -71,4 +75,109 @@ button:hover {
 .recipe p {
   font-size: 14px;
   padding: 0 10px 10px;
+}
+
+/* ===== Add Recipe Button ===== */
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#open-add-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#open-add-btn:hover {
+  background: #45a049;
+}
+
+/* ===== Modal Styling ===== */
+.modal.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content label {
+  display: block;
+  margin: 10px 0;
+  font-size: 14px;
+  text-align: left;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+#save-recipe-btn {
+  background: #ff914d;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#save-recipe-btn:hover {
+  background: #ff7b00;
+}
+
+#close-add-btn {
+  background: #ddd;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#close-add-btn:hover {
+  background: #bbb;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
